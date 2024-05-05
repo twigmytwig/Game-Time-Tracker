@@ -1,0 +1,15 @@
+{
+  "name": "game-time-tracker",
+  "version": "1.0.0",
+  "description": "App to track amount of time playing gamees",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "twigmytwig",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.2"
+  }
+}
