@@ -8,13 +8,8 @@ const func = async () => {
     //const response2 = await window.versions.getActiveGame()
     gameData = await window.app.updateJSONDisplay()
     console.log("In renderer now : " + gameData)
-    document.getElementById('GameData').innerHTML = gameData.toString();
-
-    //document.getElementById('test').innerHTML = response2;
     console.log(response) // prints out 'pong'
-    //console.log(response2) // prints out 'pong'
   }
-
   
   func()
   setInterval(func, 10000);
