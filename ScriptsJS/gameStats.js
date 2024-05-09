@@ -6,13 +6,12 @@ function updateMainGameData(){
         gamesList.innerHTML = "";                                      
         for(let key in jsonGameData){
             if(jsonGameData.hasOwnProperty(key)){
-                console.log(key)
+                //console.log(key)
                 createGameListRecord(jsonGameData, key, gamesList);
             }
         }
-
         document.getElementById("main-game-stat-loader").style.display = 'none';
-        document.getElementById("GameData").innerHTML = gameData;
+        document.getElementById("GameData").innerHTML = jsonGameData["ActiveGame"];
     }
 }
 
