@@ -30,11 +30,12 @@ function readJSONFile(path){
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1500,
+    height: 1500,
     frame: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
+      //webSecurity: false, // Disable web security THIS POTENTIALLY IS DANGEROUS
       nodeIntegration: true,
       //contextIsolation: false
     }
@@ -51,7 +52,6 @@ const createWindow = () => {
     win.maximize()
   });
 
-
   win.loadFile('index.html')
 }
 
@@ -66,14 +66,22 @@ app.whenReady().then(() => {
   pythonProcess = spawn('python', ['./main.py']);
   flaskAPIProcess = spawn('python', ['./app.py']);
 
-  pythonProcess.stdout.on('data', (data) => {
+  flaskAPIProcess.stdout.on('data', (data) => {
+    console.log(`Flask API stdout: ${data}`);
+  });
+
+  flaskAPIProcess.stderr.on('data', (data) => {
+    console.error(`Flask API stderr: ${data}`);
+  });
+
+  /*pythonProcess.stdout.on('data', (data) => {
     pythonOutput = data;
     console.log(`Python stdout: ${data}`);
     // You can send this data to your renderer process if needed
   });
   pythonProcess.stderr.on('data', (data) => {
     console.error(`Python stderr: ${data}`);
-  });
+  });*/
 
   pythonProcess.on('close', (code) => {
     console.log(`Python process exited with code ${code}`);

@@ -1,6 +1,13 @@
 from datetime import datetime, timedelta, date
 import json
 
+def add_new_game(gameName: str):
+    file = open('data.json')
+    game_json = json.load(file)
+    game_json[gameName] = { "total_game_time_seconds": 0.0, "GameSessions": {}}
+    with open('data.json', 'w') as data_file:
+                    json.dump(game_json, data_file, indent=2)
+
 def set_active_game(active_game:str, filename:str):
     file = open(filename)
     game_json = json.load(file)

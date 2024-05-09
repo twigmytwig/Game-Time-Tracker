@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "App to track amount of time playing gamees",
   "main": "main.js",
+  "devContentSecurityPolicy": "default-src 'self' http://127.0.0.1:5000",
   "scripts": {
     "start": "electron .",
     "test": "echo \"Error: no test specified\" && exit 1"

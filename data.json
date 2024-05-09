@@ -1,11 +1,11 @@
 {
   "ActiveGame": "",
   "RocketLeague.exe": {
-    "total_game_time_seconds": 4292.0,
+    "total_game_time_seconds": 3776.0,
     "GameSessions": {
       "2024-08-20": 85.0,
       "2024-09-20": 57.0,
-      "2024-05-09": 647.0
+      "2024-05-09": 131.0
     }
   },
   "Fallout76.exe": {
@@ -21,5 +21,13 @@
       "2024-08-20": 855.0,
       "2024-09-20": 571.1
     }
+  },
+  "test.exe": {
+    "total_game_time_seconds": 0.0,
+    "GameSessions": {}
+  },
+  "game.exe": {
+    "total_game_time_seconds": 0.0,
+    "GameSessions": {}
   }
 }
