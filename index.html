@@ -67,24 +67,31 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-5">
-				<div class="card">
-					<div class="card-body">
+			<div class="col-3">
+				<div class="card text-white">
+					<div class="card-body bg-dark rounded shadow">
 						<h5 class="card-title">COMING SOON: CHARTS AND REPORTS</h5>
 						<h6 class="card-subtitle mb-2 text-muted">Keep track of all sorts of trends related to your gaming habits</h6>
 						<p class="card-text">You can expect charts and other mediums of representing your gaming habits to be placed here. 
 							Potentially downloadable .csv's with the reported data</p>
-						<a href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="card-link">Suggestions? Leave them here!</a>
+						<a target="_blank" href="https://www.youtube.com/watch?v=xvFZjo5PgG0" class="card-link">Suggestions? Leave them here!</a>
 					</div>
 				</div>
 			</div>
-			<div class="col-2">
-
+			<div class="col-4">
+				<div class="card text-white">
+					<div class="card-body bg-dark rounded shadow">
+						<h5 class="card-title">Don't see your game? Add it here</h5>
+						<p class="card-text">Eventually this won't be a problem, but until I figure it out, you will have to find and submit the name of the .exe INCLUDING the extenstion</p>
+						<input type="text" id="newGameName">
+						<button onclick="submitNewGame()" class="btn btn-secondary">Submit</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 	<footer>
-		<p class="text-white" id="info"></p>
+		<p class="text-white footer" id="info"></p>
 	</footer>
   </body>
   <script src="./renderer.js"></script>
