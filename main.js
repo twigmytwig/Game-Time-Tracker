@@ -64,7 +64,7 @@ app.whenReady().then(() => {
   })
   
   pythonProcess = spawn('python', ['./main.py']);
-  pythonProcess = spawn('python', ['./app.py']);
+  flaskAPIProcess = spawn('python', ['./app.py']);
 
   pythonProcess.stdout.on('data', (data) => {
     pythonOutput = data;
@@ -77,6 +77,10 @@ app.whenReady().then(() => {
 
   pythonProcess.on('close', (code) => {
     console.log(`Python process exited with code ${code}`);
+  });
+
+  flaskAPIProcess.on('close', (code) => {
+    console.log(`Flask API process exited with code ${code}`);
   });
 
   createWindow()
