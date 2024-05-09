@@ -1,6 +1,13 @@
 from datetime import datetime, timedelta, date
 import json
 
+def set_active_game(active_game:str, filename:str):
+    file = open(filename)
+    game_json = json.load(file)
+    game_json["ActiveGame"] = active_game
+    with open(filename, 'w') as data_file:
+                    json.dump(game_json, data_file, indent=2)
+
 def get_game_time_seconds(game_time : datetime):
     return timedelta(hours=game_time.hour, minutes=game_time.minute, seconds=game_time.second).total_seconds()
 
@@ -21,7 +28,6 @@ def save_to_file(closed_game_data, closed_game_name,filename):
     print('Game time data variable: ---' + str(game_time_data))
     if game_time_data:
         for x in game_time_data:
-            print("Gametime data["+str(x)+"] -- "+ str(game_time_data[x]["total_game_time_seconds"]))
             if x == closed_game_name:
                 previous_game_time = datetime.strptime(closed_game_data[closed_game_name],format)
                 previous_game_time_seconds = float(get_game_time_seconds(previous_game_time))

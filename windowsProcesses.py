@@ -1,4 +1,5 @@
 import psutil
+from save_to_file import set_active_game
 
 existing_processes = set(p.name() for p in psutil.process_iter())
 
@@ -25,6 +26,7 @@ def monitor_processes(gameList):
             if game in new_processes:
                 print("--------")
                 print(game)
+                set_active_game(game,'data.json')
                 running_games.add(game)                           
     existing_processes = set(p.name() for p in psutil.process_iter())
     return running_games
@@ -37,5 +39,6 @@ def check_cur_running_games(active_games):
     for x in active_games:
         if x not in existing_processes:
             print("THIS GAME JUST QUIT: " + x)
+            set_active_game('','data.json')
             temp_active_games.remove(x)
     return temp_active_games
