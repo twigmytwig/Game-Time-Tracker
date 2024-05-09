@@ -1,11 +1,24 @@
 {
   "RocketLeague.exe": {
-    "total_game_time_seconds": 3831.0
+    "total_game_time_seconds": 3721.0,
+    "GameSessions": {
+      "2024-08-20": 85.0,
+      "2024-09-20": 57.0,
+      "2024-05-09": 76.0
+    }
   },
   "Fallout76.exe": {
-    "total_game_time_seconds": 3493.0
+    "total_game_time_seconds": 3493.0,
+    "GameSessions": {
+      "2024-08-20": 853.0,
+      "2024-09-20": 578.1
+    }
   },
   "FortniteClient-Win64-Shipping.exe": {
-    "total_game_time_seconds": 35.0
+    "total_game_time_seconds": 356.0,
+    "GameSessions": {
+      "2024-08-20": 855.0,
+      "2024-09-20": 571.1
+    }
   }
 }

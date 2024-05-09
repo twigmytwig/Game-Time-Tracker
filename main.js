@@ -90,6 +90,13 @@ app.whenReady().then(() => {
   })
 })
 
+app.on('before-quit', () => {
+  // Kill the Flask process before quitting Electron app
+  if (flaskAPIProcess) {
+    flaskAPIProcess.kill();
+  }
+});
+
 app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
   })
