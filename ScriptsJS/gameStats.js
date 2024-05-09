@@ -5,7 +5,7 @@ function updateMainGameData(){
         gamesList = document.getElementById("playedGamesList");
         gamesList.innerHTML = "";                                      
         for(let key in jsonGameData){
-            if(jsonGameData.hasOwnProperty(key)){
+            if(jsonGameData.hasOwnProperty(key) && key != 'ActiveGame'){ //TODO: THIS IS TEMPORARIY UNTIL I RESOLVE THE STRUCTURE OF THE DATA.JSON
                 //console.log(key)
                 createGameListRecord(jsonGameData, key, gamesList);
             }
@@ -24,7 +24,8 @@ function createGameListRecord(gameObject, key, gameList){
 function convertSecondsToHours(seconds){
     //I need to take the seconds and return hours and minutes
     let secondsFloat = parseFloat(seconds);
-    return (secondsFloat/60).toFixed(2);
+    let minutesFloat = (secondsFloat/60).toFixed(2);
+    return (minutesFloat/60).toFixed(2);
 }
 
 
