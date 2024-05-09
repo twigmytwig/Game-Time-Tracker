@@ -64,6 +64,7 @@ app.whenReady().then(() => {
   })
   
   pythonProcess = spawn('python', ['./main.py']);
+  pythonProcess = spawn('python', ['./app.py']);
 
   pythonProcess.stdout.on('data', (data) => {
     pythonOutput = data;

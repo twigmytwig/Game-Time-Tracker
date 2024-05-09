@@ -11,6 +11,7 @@ ACTIVE_GAMES : str = set() #set makes this a unique list since one game can spaw
 ACTIVE_GAME_TIME = {}
 CLOSED_GAME_TOTAL_TIME = {}
 games_list = test_data()
+
 def set_active_games():
     global ACTIVE_GAMES
     global games_list
@@ -37,8 +38,8 @@ def set_active_games():
 
 if __name__ == "__main__": 
     app = QApplication(sys.argv)
-    window = ProcessMonitorApp()
-    window.show()
+    #window = ProcessMonitorApp()
+    #window.show()
     
     timer = QTimer()
     timer.timeout.connect(set_active_games)
