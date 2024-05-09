@@ -43,31 +43,32 @@
 			<hr/>
 		  </nav>
     </div>
-    <div>
-    <div class="container">
-      <h1 class="text-white">Active Game:</h1>
-      <p class="text-white" id="GameData">
-		<div id="main-game-stat-loader" class="spinner-border text-light" role="status">
-			<span class="visually-hidden">Loading...</span>
-		</div>
-	  </p>
-	    <ul class="text-white" >
+	<div class="container">
+		<div class="row">
+			<div class="col-4">
+				<h1 class="text-white">Active Game:
+					<span class="text-white" id="GameData">
+						<div id="main-game-stat-loader" class="spinner-border text-light" role="status">
+							<span class="visually-hidden">Loading...</span>
+						</div>
+					</span>
+				</h1>
 
-		</ul>  
-		<div class="accordion shadow-lg accordion-flush" >
-			<div class="accordion-item">
-			  <h2 class="accordion-header" id="flush-headingOne">
-				<button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-					Existing Total Game Time
-				</button>
-			  </h2>
-			  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-				<div id="playedGamesList"class="accordion-body">...</div>
-			  </div>
+				<div class="accordion shadow-lg accordion-flush" >
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="flush-headingOne">
+							<button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+								Existing Total Game Time
+							</button>
+						</h2>
+						<div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+							<div id="playedGamesList"class="accordion-body">...</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-
 	<footer>
 		<p class="text-white" id="info"></p>
 	</footer>

@@ -11,7 +11,7 @@ function updateMainGameData(){
             }
         }
         document.getElementById("main-game-stat-loader").style.display = 'none';
-        document.getElementById("GameData").innerHTML = jsonGameData["ActiveGame"];
+        document.getElementById("GameData").innerHTML = jsonGameData["ActiveGame"] == "" ? "N/A" : jsonGameData["ActiveGame"];
     }
 }
 

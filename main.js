@@ -98,6 +98,9 @@ app.on('before-quit', () => {
 });
 
 app.on('window-all-closed', () => {
+  if (flaskAPIProcess) {
+    flaskAPIProcess.kill();
+  }
     if (process.platform !== 'darwin') app.quit()
   })
 
