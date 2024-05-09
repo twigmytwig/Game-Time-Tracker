@@ -13,6 +13,7 @@
     <title>Hello from Electron renderer!</title>
     <link rel="stylesheet" href="./css/body.css">
     <link rel="stylesheet" href="./css/navbar.css">
+	<link rel="stylesheet" href="./css/accordion.css">
   </head>
   <body class="bg bg-dark">
 	<div class="title-bar">
@@ -50,8 +51,23 @@
 			<span class="visually-hidden">Loading...</span>
 		</div>
 	  </p>
-      
-    </div>
+	    <ul class="text-white" >
+
+		</ul>  
+		<div class="accordion shadow-lg accordion-flush" >
+			<div class="accordion-item">
+			  <h2 class="accordion-header" id="flush-headingOne">
+				<button class="accordion-button text-white collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+					Existing Total Game Time
+				</button>
+			  </h2>
+			  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+				<div id="playedGamesList"class="accordion-body">...</div>
+			  </div>
+			</div>
+		</div>
+	</div>
+
 	<footer>
 		<p class="text-white" id="info"></p>
 	</footer>
