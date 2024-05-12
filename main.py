@@ -10,11 +10,11 @@ import save_to_file
 ACTIVE_GAMES : str = set() #set makes this a unique list since one game can spawn many game.exe
 ACTIVE_GAME_TIME = {}
 CLOSED_GAME_TOTAL_TIME = {}
-games_list = get_games()
+
 
 def set_active_games():
     global ACTIVE_GAMES
-    global games_list
+    games_list = get_games()
 
     games = monitor_processes(games_list)
     if len(games) > 0:

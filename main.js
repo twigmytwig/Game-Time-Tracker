@@ -32,7 +32,7 @@ const createWindow = () => {
   const win = new BrowserWindow({
     width: 1500,
     height: 1500,
-    frame: false,
+    frame: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       //webSecurity: false, // Disable web security THIS POTENTIALLY IS DANGEROUS

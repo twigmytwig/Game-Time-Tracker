@@ -1,32 +1,3 @@
 {
-  "ActiveGame": "",
-  "RocketLeague.exe": {
-    "total_game_time_seconds": 4506.0,
-    "GameSessions": {
-      "2024-08-20": 85.0,
-      "2024-09-20": 57.0,
-      "2024-05-09": 612.0,
-      "2024-05-11": 132.0,
-      "2024-05-12": 117.0
-    }
-  },
-  "Fallout76.exe": {
-    "total_game_time_seconds": 48.0,
-    "GameSessions": {
-      "2024-05-09": 48.0
-    }
-  },
-  "FortniteClient-Win64-Shipping.exe": {
-    "total_game_time_seconds": 356.0,
-    "GameSessions": {
-      "2024-08-20": 855.0,
-      "2024-09-20": 571.1
-    }
-  },
-  "ShippingPC-BattleGame.exe": {
-    "total_game_time_seconds": 62.0,
-    "GameSessions": {
-      "2024-05-11": 62.0
-    }
-  }
+  "ActiveGame": ""
 }
