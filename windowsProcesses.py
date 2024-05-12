@@ -1,6 +1,7 @@
 import psutil
 from save_to_file import set_active_game
 
+#Get all running processes
 existing_processes = set(p.name() for p in psutil.process_iter())
 
 def filter_by_name(process_name):
@@ -30,6 +31,7 @@ def monitor_processes(gameList):
                 running_games.add(game)                           
     existing_processes = set(p.name() for p in psutil.process_iter())
     return running_games
+
 
 def check_cur_running_games(active_games):
     temp_active_games = active_games.copy()

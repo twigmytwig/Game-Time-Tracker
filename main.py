@@ -2,7 +2,7 @@ import sys
 from windowsProcesses import monitor_processes, check_cur_running_games
 from PyQt6.QtWidgets import QApplication
 from PyqtGUI import ProcessMonitorApp
-from data_seeds import test_data
+from data_seeds import get_games
 from PyQt6.QtCore import QTimer
 import datetime
 import save_to_file
@@ -10,7 +10,7 @@ import save_to_file
 ACTIVE_GAMES : str = set() #set makes this a unique list since one game can spawn many game.exe
 ACTIVE_GAME_TIME = {}
 CLOSED_GAME_TOTAL_TIME = {}
-games_list = test_data()
+games_list = get_games()
 
 def set_active_games():
     global ACTIVE_GAMES

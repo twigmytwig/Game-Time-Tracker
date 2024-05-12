@@ -6,18 +6,16 @@ app = Flask(__name__)
 
 # Define a sample route
 @app.route('/api/data', methods=['GET'])
-def get_datas():
+def get_data():
     data = {'message': 'Hello from Flask!'}
     return jsonify(data)
 
 # POST route to receive JSON data
 @app.route('/api/SubmitNewGame', methods=['POST'])
-def submit_new_game():
-    print("HELLLLLLLLLLLLLLLLLLOPOOOOOOOOOOOOOOOOOOOO")
+def post_data():
     # Check if request contains JSON data
     if request.is_json:
         data = request.get_json()  # Parse JSON data
-        print("-------------------" + str(data) + "-----------------------------------------")
         add_new_game(data)  # Output JSON data to console (for demonstration)
 
         response = {'status': 'success', 'message': 'Data received'}

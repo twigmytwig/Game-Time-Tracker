@@ -74,14 +74,14 @@ app.whenReady().then(() => {
     console.error(`Flask API stderr: ${data}`);
   });
 
-  /*pythonProcess.stdout.on('data', (data) => {
+  pythonProcess.stdout.on('data', (data) => {
     pythonOutput = data;
     console.log(`Python stdout: ${data}`);
     // You can send this data to your renderer process if needed
   });
   pythonProcess.stderr.on('data', (data) => {
     console.error(`Python stderr: ${data}`);
-  });*/
+  });
 
   pythonProcess.on('close', (code) => {
     console.log(`Python process exited with code ${code}`);

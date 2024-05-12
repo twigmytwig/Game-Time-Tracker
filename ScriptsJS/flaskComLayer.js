@@ -10,6 +10,5 @@ async function submitNewGame(){
         },
         body: JSON.stringify(gameName)
     });
-    alert(response.json);
-    return response.json();
+    gameName.value = "";
 }

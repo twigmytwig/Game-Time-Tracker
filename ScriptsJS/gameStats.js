@@ -10,7 +10,10 @@ function updateMainGameData(){
                 createGameListRecord(jsonGameData, key, gamesList);
             }
         }
-        document.getElementById("main-game-stat-loader").style.display = 'none';
+        if(document.getElementById("main-game-stat-loader")){
+            document.getElementById("main-game-stat-loader").style.display = 'none';
+        }
+        
         document.getElementById("GameData").innerHTML = jsonGameData["ActiveGame"] == "" ? "N/A" : jsonGameData["ActiveGame"];
     }
 }

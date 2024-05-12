@@ -1,14 +1,16 @@
+import json
+
+
 class WinProcess:
     def __init__(self, name):
         self.name = name
 
 data : str = []
 
-def test_data():
-    tempData = "Fallout76.exe"
-    tempData2 = "RocketLeague.exe"
-    tempData3 = "FortniteClient-Win64-Shipping.exe"
-    data.append(tempData2)
-    data.append(tempData)
-    data.append(tempData3)
+def get_games():
+    file = open('data.json')
+    game_json = json.load(file)
+    if game_json:
+        for x in game_json:
+            data.append(x)
     return data
