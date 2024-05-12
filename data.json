@@ -1,12 +1,13 @@
 {
   "ActiveGame": "",
   "RocketLeague.exe": {
-    "total_game_time_seconds": 4347.0,
+    "total_game_time_seconds": 4431.0,
     "GameSessions": {
       "2024-08-20": 85.0,
       "2024-09-20": 57.0,
       "2024-05-09": 612.0,
-      "2024-05-11": 90.0
+      "2024-05-11": 132.0,
+      "2024-05-12": 42.0
     }
   },
   "Fallout76.exe": {
@@ -23,13 +24,9 @@
     }
   },
   "ShippingPC-BattleGame.exe": {
-    "total_game_time_seconds": 35.0,
+    "total_game_time_seconds": 62.0,
     "GameSessions": {
-      "2024-05-11": 35.0
+      "2024-05-11": 62.0
     }
-  },
-  "mariah.exe": {
-    "total_game_time_seconds": 0.0,
-    "GameSessions": {}
   }
 }

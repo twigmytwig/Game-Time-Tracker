@@ -1,27 +1,34 @@
 //gameData is defined and updates via renderer.js
 function updateMainGameData(){
-    if(Object.keys(gameData).length !== 0){
-        jsonGameData = JSON.parse(gameData);
-        gamesList = document.getElementById("playedGamesList");
-        gamesList.innerHTML = "";                                      
-        for(let key in jsonGameData){
-            if(jsonGameData.hasOwnProperty(key) && key != 'ActiveGame'){ //TODO: THIS IS TEMPORARIY UNTIL I RESOLVE THE STRUCTURE OF THE DATA.JSON
-                //console.log(key)
-                createGameListRecord(jsonGameData, key, gamesList);
-            }
+    const mainGameStatsLoader = document.getElementById("main-game-stat-loader");
+    if(gameData){
+        let jsonGameData;
+        try{
+            jsonGameData = JSON.parse(gameData);
         }
-        if(document.getElementById("main-game-stat-loader")){
-            document.getElementById("main-game-stat-loader").style.display = 'none';
+        catch(error){
+            console.error("Error parsing gameDate:" + error);
+            return;
+        }
+        gamesList = document.getElementById("playedGamesList");
+        gamesList.innerHTML = "";    
+        Object.entries(jsonGameData)
+        .filter(([key]) => key !== 'ActiveGame')
+        .forEach(([key, value]) => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${key} : ${convertSecondsToHours(value.total_game_time_seconds)} hours`;
+            gamesList.appendChild(listItem);
+        });
+
+        if(mainGameStatsLoader){
+            mainGameStatsLoader.style.display = 'none';
         }
         
-        document.getElementById("GameData").innerHTML = jsonGameData["ActiveGame"] == "" ? "N/A" : jsonGameData["ActiveGame"];
+        document.getElementById("GameData").textContent = jsonGameData["ActiveGame"] == "" ? "N/A" : jsonGameData["ActiveGame"];
     }
-}
-
-function createGameListRecord(gameObject, key, gameList){
-    list = document.createElement('li');
-    list.innerHTML = key + " : " + convertSecondsToHours(gameObject[key]["total_game_time_seconds"]) + " hours";
-    gamesList.append(list);
+    else{
+        return;
+    }
 }
 
 function convertSecondsToHours(seconds){
@@ -30,7 +37,6 @@ function convertSecondsToHours(seconds){
     let minutesFloat = (secondsFloat/60).toFixed(2);
     return (minutesFloat/60).toFixed(2);
 }
-
 
 updateMainGameData()
 setInterval(updateMainGameData, 5000); // TODO probably there is a better way to do this
